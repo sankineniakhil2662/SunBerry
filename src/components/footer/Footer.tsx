@@ -15,7 +15,7 @@ import ErrorPopup from "../contact/ErrorPopup";
 
 const quickLinks = [
   { label: "About Us", to: "/about" },
-  { label: "Careers", to: "/career" },
+  { label: "Careers", to: "/careers" },
   { label: "Contact", to: "/contact" },
 ];
 
