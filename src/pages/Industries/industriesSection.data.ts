@@ -2367,8 +2367,8 @@ export const INDUSTRIES_DATA: Record<string, IndustryPageData> = {
       alt: "Live streaming app mockup",
     },
   },
-  "news-app": {
-    slug: "news-app",
+  "news": {
+    slug: "news",
     label: "NEWS",
     title: "News App",
     subtitle:

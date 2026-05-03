@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -59,18 +58,6 @@ const containerV = {
 const cardV = {
   hidden: { opacity: 0, y: 14 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
-};
-
-const slugToDataKey: Record<string, keyof typeof INDUSTRIES_DATA> = {
-  agriculture: "agriculture-farming",
-  fintech: "fintech",
-  healthcare: "healthcare-fitness",
-  education: "education",
-  ecommerce: "e-commerce",
-  "food-delivery": "food-delivery",
-  logistics: "logistics",
-  "real-estate": "real-estate-marketplace",
-  "social-media": "social-media",
 };
 
 function SectionCard({
@@ -150,10 +137,8 @@ function SectionCard({
 export default function IndustryDetailPage() {
   const { slug } = useParams<{ slug?: string }>();
 
-  const resolvedKey =
-    (slug ? slugToDataKey[slug] : undefined) ?? "agriculture-farming";
-
-  const data = INDUSTRIES_DATA[resolvedKey] ?? INDUSTRIES_DATA["agriculture-farming"];
+  const data =
+    (slug && INDUSTRIES_DATA[slug]) || INDUSTRIES_DATA["agriculture-farming"];
   const a = accentTokens(data.accent);
 
   return (
